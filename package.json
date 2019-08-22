@@ -14,7 +14,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:f1lt3r/chromafi.git"
+		"url": "git@github.com:trufflesuite/chromafi.git"
 	},
 	"dependencies": {
 		"ansi-mark": "^1.0.0",
@@ -247,5 +247,5 @@
 	],
 	"author": "F1LT3R",
 	"license": "MIT",
-	"homepage": "https://github.com/f1lt3r/chromafi#readme"
+	"homepage": "https://github.com/trufflesuite/chromafi/tree/release"
 }
