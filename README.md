@@ -17,6 +17,7 @@ The differences are as follows:
 
 1. This fork allows colors to continue across lines.
 2. This fork exposes the `hljs` object as `chromafi.hljs` so that it can be modified.
+3. This fork uses `lodash.merge` instead of `deepmerge` for Webpack compatibility.
 
 ## Support
 
