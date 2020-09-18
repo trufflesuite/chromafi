@@ -80,28 +80,6 @@ const filter = (node, opts) => {
 	return ''
 }
 
-const findLongestLine = (text, opts) => {
-	let tabPad = ''
-
-	if (opts.$indent.tabs) {
-		tabPad = String().padEnd(opts.consoleTabWidth, ' ')
-	}
-
-	const lines = stripAnsi(text)
-		.replace(/\t/g, tabPad)
-		.split('\n')
-
-	let max = 0
-
-	lines.forEach(line => {
-		if (line.length > max) {
-			max = line.length
-		}
-	})
-
-	return max
-}
-
 const padLine = (line, padding) => {
 	const padStr = String().padStart(padding, ' ')
 	return padStr + line + padStr
@@ -279,7 +257,6 @@ const cropPadAndNumber = (text, opts) => {
 	// Tabs needed to contain digits (so we dont break code tab indentation)
 	const tabsNeeded = Math.ceil(maxDigitWidth / opts.consoleTabWidth)
 	const maxTabSpace = tabsNeeded * opts.consoleTabWidth
-	const longestLineLen = findLongestLine(text, opts)
 
 	opts.$maxTabSpace = maxTabSpace
 	opts.$maxDigitWidth = maxDigitWidth
@@ -291,11 +268,6 @@ const cropPadAndNumber = (text, opts) => {
 		}
 
 		const lineNo = lineNumberPad(lineNumber, opts)
-
-		const tabCount = (line.match(/\t/g) || []).length
-		const tabAdjust = (tabCount * opts.consoleTabWidth)
-
-		const plain = stripAnsi(line).replace(/\t/g, '')
 
 		let lineOutput
 
