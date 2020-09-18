@@ -296,17 +296,15 @@ const cropPadAndNumber = (text, opts) => {
 		const tabAdjust = (tabCount * opts.consoleTabWidth)
 
 		const plain = stripAnsi(line).replace(/\t/g, '')
-		const linePad = String().padEnd((longestLineLen - plain.length) - tabAdjust, ' ')
-		const runLengthLine = line + opts.colors.trailingSpace(linePad)
 
 		let lineOutput
 
 		if (opts.tabsToSpaces === false) {
-			lineOutput = lineNo + runLengthLine
+			lineOutput = lineNo + line
 		}
 
 		if (typeof opts.tabsToSpaces === 'number') {
-			lineOutput = lineNo + padLine(runLengthLine, opts.codePad)
+			lineOutput = lineNo + padLine(line, opts.codePad)
 		}
 
 		output += lineOutput + '\n'
