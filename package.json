@@ -1,6 +1,6 @@
 {
-	"name": "chromafi",
-	"version": "2.1.0",
+	"name": "@trufflesuite/chromafi",
+	"version": "2.1.1",
 	"description": "🦅  cli syntax highlighting: any function - any object - 176 languages",
 	"main": "index.js",
 	"scripts": {
@@ -14,7 +14,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:f1lt3r/chromafi.git"
+		"url": "git@github.com:trufflesuite/chromafi.git"
 	},
 	"dependencies": {
 		"ansi-mark": "^1.0.0",
@@ -23,10 +23,10 @@
 		"camelcase": "^4.1.0",
 		"chalk": "^2.3.2",
 		"cheerio": "^1.0.0-rc.2",
-		"deepmerge": "^2.1.0",
 		"detect-indent": "^5.0.0",
 		"he": "^1.1.1",
 		"highlight.js": "^10.4.1",
+		"lodash.merge": "^4.6.2",
 		"min-indent": "^1.0.0",
 		"strip-ansi": "^4.0.0",
 		"strip-indent": "^2.0.0",
@@ -247,5 +247,5 @@
 	],
 	"author": "F1LT3R",
 	"license": "MIT",
-	"homepage": "https://github.com/f1lt3r/chromafi#readme"
+	"homepage": "https://github.com/trufflesuite/chromafi/tree/release"
 }

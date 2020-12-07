@@ -9,6 +9,16 @@
 
 ![Figure 00](examples/figure-00.png)
 
+## Fork notice
+
+This is Truffle's customized fork of Chromafi.  The original Chromafi can be found [here](https://github.com/F1LT3R/chromafi).
+
+The differences are as follows:
+
+1. This fork allows colors to continue across lines.
+2. This fork exposes the `hljs` object as `chromafi.hljs` so that it can be modified.
+3. This fork uses `lodash.merge` instead of `deepmerge` for Webpack compatibility.
+
 ## Support
 
 Support the development of Chromafi by [becoming a patreon](https://patreon.com/bePatron?u=9720216).
