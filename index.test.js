@@ -338,47 +338,6 @@ test('Line number offset/start', t => {
 	t.is(result, '\u001b[37m\u001b[90m123\u001b[37m \u001b[34m<\u001b[36mbody\u001b[34m>\u001b[37m                    \u001b[39m\n\u001b[37m\u001b[90m124\u001b[37m     \u001b[34m<\u001b[36mdiv\u001b[34m>\u001b[37m                 \u001b[39m\n\u001b[37m\u001b[90m125\u001b[37m         \u001b[34m<\u001b[36mspan\u001b[34m>\u001b[37mGood\u001b[34m</\u001b[36mspan\u001b[34m>\u001b[37m \u001b[39m\n\u001b[37m\u001b[90m126\u001b[37m         \u001b[34m<\u001b[36mspan\u001b[34m>\u001b[37mBad\u001b[34m</\u001b[36mspan\u001b[34m>\u001b[37m  \u001b[39m\n\u001b[37m\u001b[90m127\u001b[37m     \u001b[34m</\u001b[36mdiv\u001b[34m>\u001b[37m                \u001b[39m\n\u001b[37m\u001b[90m128\u001b[37m \u001b[34m<\u001b[36mbody\u001b[34m>\u001b[37m                    \u001b[39m\n\u001b[37m\u001b[39m')
 })
 
-test('Multiline highlight, replacing color', t => {
-	const html = '<body>\n\t<div>\n\t\t<span>Good</span>\n\t\t<span>Bad<span>\n\t<div>\n</body>'
-
-	const result = chromafi(html, {
-		lang: 'html',
-		lineNumbers: false,
-		codePad: 0,
-		highlight: {
-			start: {line: 4, column: 18},
-			end: {line: 5, column: 9},
-			color: chalk.bgRed.white.bold,
-			resetColor: true
-		},
-		colors: {
-			tag: chalk.yellow
-		}
-	})
-	t.is(result, '\u001b[37m\u001b[33m<\u001b[36mbody\u001b[33m>\u001b[37m                   \u001b[39m\n\u001b[37m    \u001b[33m<\u001b[36mdiv\u001b[33m>\u001b[37m                \u001b[39m\n\u001b[37m        \u001b[33m<\u001b[36mspan\u001b[33m>\u001b[37mGood\u001b[33m</\u001b[36mspan\u001b[33m>\u001b[37m\u001b[39m\n\u001b[37m        \u001b[33m<\u001b[36mspan\u001b[33m>\u001b[37mBad\u001b[33m\u001b[41m\u001b[37m\u001b[1m<span>\u001b[22m\u001b[37m\u001b[49m  \u001b[39m\n\u001b[37m\u001b[41m\u001b[37m\u001b[1m    <div>\u001b[22m\u001b[37m\u001b[49m\u001b[37m                \u001b[39m\n\u001b[37m\u001b[33m</\u001b[36mbody\u001b[33m>\u001b[37m                  \u001b[39m\n\u001b[37m\u001b[39m')
-})
-
-test('Single line highlight, replacing color', t => {
-	const html = `<div>Highlight me!</div>`
-
-	const result = chromafi(html, {
-		codePad: 0,
-		lang: 'html',
-		lineNumbers: false,
-		lineNumberStart: 1,
-		highlight: {
-			start: 6,
-			end: 18,
-			color: chalk.bgRed.white.bold,
-			resetColor: true
-		},
-		colors: {
-			tag: chalk.yellow
-		}
-	})
-	t.is(result, '\u001b[37m\u001b[33m<\u001b[36mdiv\u001b[33m>\u001b[37m\u001b[41m\u001b[37m\u001b[1mHighlight me!\u001b[22m\u001b[37m\u001b[49m\u001b[33m</\u001b[36mdiv\u001b[33m>\u001b[37m\u001b[39m\n\u001b[37m\u001b[39m')
-})
-
 test('Circular JSON throws', t => {
 	const a = {}
 	const b = {}
