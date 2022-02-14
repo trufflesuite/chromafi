@@ -1,6 +1,6 @@
 {
 	"name": "@trufflesuite/chromafi",
-	"version": "2.2.2",
+	"version": "3.0.0",
 	"description": "🦅  cli syntax highlighting: any function - any object - 176 languages",
 	"main": "index.js",
 	"scripts": {
