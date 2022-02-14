@@ -17,7 +17,6 @@
 		"url": "git@github.com:trufflesuite/chromafi.git"
 	},
 	"dependencies": {
-		"ansi-mark": "^1.0.0",
 		"ansi-regex": "^3.0.0",
 		"array-uniq": "^1.0.3",
 		"camelcase": "^4.1.0",
