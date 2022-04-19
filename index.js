@@ -119,7 +119,7 @@ const getIndentStr = opts => {
 	return String().padEnd(opts.tabsToSpaces, ' ')
 }
 
-const syntaxHlStr = (lang, script, opts, indentStart) => {
+const syntaxHlStr = (language, script, opts, indentStart) => {
 	const indentStr = getIndentStr(opts)
 
 	if (opts.$indent.tabs) {
@@ -134,7 +134,7 @@ const syntaxHlStr = (lang, script, opts, indentStart) => {
 		script = indentStr + script
 	}
 
-	const code = hljs.highlight(lang, script).value
+	const code = hljs.highlight(script, {language}).value
 	const html = `<code>${code}</code>`
 	const $body = cheerio.load(html).root().find('code')[0]
 	const output = filter($body, opts)
